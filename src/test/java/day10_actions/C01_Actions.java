@@ -21,9 +21,12 @@ public class C01_Actions extends TestBase {
         -actions.moveToElement(accountLinki).perform(); --> istenen islem yapilir
 
     ---Mause
+    .click() --> tek tiklar
+    .doubleClick() --> cift tiklar
     .moveToElement(element).perform() --> fareyi istenen konuma goturur
     .contextClick(element).perform() --> farede sag tiklar
     .dragAndDrop(tasinacakElement, hedefElement).perform(); --> elementi istenen yere surukleyip birakir
+    .clickAndHold() --> click yapip bizden komut bekler
 
     ---Klavye
     .sendKeys() --> basilan tusu yollar
