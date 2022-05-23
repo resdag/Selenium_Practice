@@ -1,4 +1,4 @@
-package day08_alerts;
+package day00_exercise;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.List;
 
-public class C03_IframeTest02 {
+public class D08_C02_IframePractice {
     static WebDriver driver;
 
     @BeforeClass

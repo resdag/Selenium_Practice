@@ -1,4 +1,4 @@
-package day09_handleWindows;
+package day00_exercise;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.Set;
 
-public class C02_exercise {
+public class D09_C01_WindowHandle {
     static WebDriver driver;
 
     @BeforeClass

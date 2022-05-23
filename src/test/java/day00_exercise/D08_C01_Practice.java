@@ -1,4 +1,4 @@
-package day08_alerts;
+package day00_exercise;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
@@ -7,13 +7,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.List;
 
-public class C02_Practice {
+public class D08_C01_Practice {
 
     static WebDriver driver;
 

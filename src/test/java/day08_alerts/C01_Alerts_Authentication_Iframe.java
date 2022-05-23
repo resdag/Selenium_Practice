@@ -25,7 +25,7 @@ public class C01_Alerts_Authentication_Iframe {
 
     .clear() -- yaziyi siler
 
-    .lert() -- uyaridir.    HTML alert'lere islem gerekmez.
+    .alert() -- uyaridir.    HTML alert'lere islem gerekmez.
                             JS alertler ise ciktiginda locate edilemez.
 
 

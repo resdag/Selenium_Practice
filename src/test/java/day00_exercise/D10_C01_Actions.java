@@ -1,16 +1,15 @@
-package day10_actions;
+package day00_exercise;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
 import java.util.Set;
 
-public class C02_Exercise extends TestBase {
+public class D10_C01_Actions extends TestBase {
 
     @Test
     public void test01() {
