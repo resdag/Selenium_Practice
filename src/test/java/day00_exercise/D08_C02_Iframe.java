@@ -18,7 +18,7 @@ public class D08_C02_Iframe extends TestBase {
         // 1- http://webdriveruniversity.com/IFrame/index.htmlsayfasina gidin
         driver.get("http://webdriveruniversity.com/IFrame/index.html");
         // 2 - our products butonuna basin
-        String ilkSayfaWHDegeri = driver.getWindowHandle();
+        //String ilkSayfaWHDegeri = driver.getWindowHandle();
         WebElement iFrameElementi = driver.findElement(By.xpath("//iframe[@id='frame']"));
         driver.switchTo().frame(iFrameElementi);
         driver.findElement(By.xpath("//*[text()='Our Products']")).click();
@@ -35,7 +35,8 @@ public class D08_C02_Iframe extends TestBase {
         // 5 - close butonuna basin
         driver.findElement(By.xpath("//*[text()='Close']")).click();
         // 6 - webdriveruniversity.com (IFrame) linkine tiklayin
-        driver.switchTo().window(ilkSayfaWHDegeri);
+        //driver.switchTo().window(ilkSayfaWHDegeri);
+        driver.switchTo().defaultContent();
         driver.findElement(By.xpath("//a[text()='WebdriverUniversity.com (IFrame)']")).click();
         // 7 - http://webdriveruniversity.com/index.html sayfasina gittigini kontrol edin
         String beklenenUrl = "http://webdriveruniversity.com/index.html";
