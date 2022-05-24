@@ -17,7 +17,9 @@ public class C01_Faker_File extends TestBase {
         String fakeMail = faker.internet().emailAddress();
         actions.click(isimKutusu)
                 .sendKeys(faker.name().firstName()) // fake isim yazar
-                .sendKeys(faker.internet().password()) //fake parola yazar
+                .sendKeys(faker.internet(). //fake parola yazar
+                .sendKeys(Keys.ENTER)
+                .perform(); //en sonda performu unutmamaiyiz
 
     - File Exist / File DownLoad / File Upload
         - System.getProperty("user.dir") --> icinde olunan dosyanin yolunu verir
