@@ -36,25 +36,49 @@ public class OE_01 extends TestBase {
         //7. Click 'Signup' button
         driver.findElement(By.xpath("//button[text()='Signup']")).click();
         //8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
-        String infoText= driver.findElement(By.xpath("//*[text()='Enter Account Information']")).getText();
+        String infoText = driver.findElement(By.xpath("//*[text()='Enter Account Information']")).getText();
         Assert.assertTrue(infoText.contains("ENTER ACCOUNT INFORMATION"));
         //9. Fill details: Title, Name, Email, Password, Date of birth
-        WebElement gerderElement= driver.findElement(By.xpath("//input[@value='Mr']"));
-        actions.click(gerderElement).
-                sendKeys(faker.name().fullName()).
-                sendKeys(Keys.TAB).
-                sendKeys(faker.internet().emailAddress()).
-                sendKeys(Keys.TAB).
-                sendKeys(faker.internet().password()).perform();
         //10. Select checkbox 'Sign up for our newsletter!'
         //11. Select checkbox 'Receive special offers from our partners!'
         //12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
         //13. Click 'Create Account button'
+        WebElement genderElement = driver.findElement(By.xpath("//input[@value='Mr']"));
+        actions.click(genderElement)
+                .sendKeys(Keys.TAB).sendKeys(faker.name().fullName())
+                .sendKeys(Keys.TAB).sendKeys(faker.internet().emailAddress())
+                .sendKeys(Keys.TAB).sendKeys(faker.internet().password())
+                .sendKeys(Keys.TAB).sendKeys("20")
+                .sendKeys(Keys.TAB).sendKeys("July")
+                .sendKeys(Keys.TAB).sendKeys("1991")
+                .sendKeys(Keys.TAB).click()
+                .sendKeys(Keys.TAB).click()
+                .sendKeys(Keys.TAB).sendKeys(faker.name().firstName())
+                .sendKeys(Keys.TAB).sendKeys(faker.name().lastName())
+                .sendKeys(Keys.TAB).sendKeys(faker.company().name())
+                .sendKeys(Keys.TAB).sendKeys(faker.address().fullAddress())
+                .sendKeys(Keys.TAB).sendKeys(faker.address().fullAddress())
+                .sendKeys(Keys.TAB).sendKeys(faker.country().name())
+                .sendKeys(Keys.TAB).sendKeys(faker.address().state())
+                .sendKeys(Keys.TAB).sendKeys(faker.address().city())
+                .sendKeys(Keys.TAB).sendKeys(faker.address().zipCode())
+                .sendKeys(Keys.TAB).sendKeys(faker.phoneNumber().cellPhone())
+                .sendKeys(Keys.TAB).sendKeys(Keys.ENTER)
+                .perform();
+
         //14. Verify that 'ACCOUNT CREATED!' is visible
+        String accountText = driver.findElement(By.xpath("//*[text()='Account Created!']")).getText();
+        Assert.assertTrue(accountText.contains("ACCOUNT CREATED!"));
         //15. Click 'Continue' button
+        driver.findElement(By.xpath("//a[text()='Continue']")).click();
         //16. Verify that 'Logged in as username' is visible
+        WebElement userNameElement = driver.findElement(By.xpath("//*[text()=' Logged in as ']"));
+        Assert.assertTrue(userNameElement.isDisplayed());
         //17. Click 'Delete Account' button
+        driver.findElement(By.xpath("//*[text()=' Delete Account']")).click();
         //18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
+        driver.findElement(By.xpath("//a[text()='Delete Account']")).click();
+
 
     }
 }
