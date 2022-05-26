@@ -48,8 +48,6 @@ public class C01_Assertions {
 
         - select.getFirstSelectedOption() ile son secilen optiona'a gideriz, bu WebElement dondurur,
             getText() ile uzerindeki yaziyi yazdirilir
-
-
      */
 
     static WebDriver driver;

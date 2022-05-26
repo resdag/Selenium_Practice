@@ -29,8 +29,6 @@ public class C01_Faker_File extends TestBase {
 
         - Dosya yuklemek icin dosya yukleme butonuna dosya adresi yollanir
             -dosyaSecButonu.sendKeys(yuklenecekDosya);
-
-
      */
 
     @Test

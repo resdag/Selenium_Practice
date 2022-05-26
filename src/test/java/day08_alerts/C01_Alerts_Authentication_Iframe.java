@@ -36,8 +36,6 @@ public class C01_Alerts_Authentication_Iframe {
     bu varsa ilgili bolum ayri bir HTML tag'i yani ayri web sayfasi icerir.
     buraya gecmek icin switchTo kullanilmalidir.
     .switchTo() ile iframe'e gecersek eski sayfaya geri donmemiz gerekir
-
-
      */
     static WebDriver driver;
 
