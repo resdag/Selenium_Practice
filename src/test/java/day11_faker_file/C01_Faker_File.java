@@ -4,12 +4,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class C01_Faker_File extends TestBase {
+public class C01_Faker_File extends TestBaseJUnit {
     /*
     - Faker kütüphanesini pom.xml'e ekledik.
 

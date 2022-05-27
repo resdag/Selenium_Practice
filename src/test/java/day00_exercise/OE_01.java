@@ -7,9 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
-public class OE_01 extends TestBase {
+public class OE_01 extends TestBaseJUnit {
 
     @Test
     public void test01() {

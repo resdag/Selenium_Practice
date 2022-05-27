@@ -1,19 +1,16 @@
 package day13_cookies_webTables;
 
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
 import java.util.List;
-import java.util.Set;
 
-public class C01_Cookies_WebTables extends TestBase {
+public class C01_Cookies_WebTables extends TestBaseJUnit {
     /*
     .manage().getCookies() --> cookiesleri set'e atar
                 .addCookie(cookie); --> Cookie cookie = new Cookie("yeni", "seker"); ile olusturulani sete ekler

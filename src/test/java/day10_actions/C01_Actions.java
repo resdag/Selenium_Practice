@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
 import java.util.Set;
 
-public class C01_Actions extends TestBase {
+public class C01_Actions extends TestBaseJUnit {
     /*
     src/test/java/utilities altinda olusturdugumuz TestBase class'ini extend ederek
     oradaki Before/After methodlarini kullanabiliriz.

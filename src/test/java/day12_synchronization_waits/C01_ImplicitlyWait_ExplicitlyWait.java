@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
 import java.time.Duration;
 
-public class C01_ImplicitlyWait_ExplicitlyWait extends TestBase {
+public class C01_ImplicitlyWait_ExplicitlyWait extends TestBaseJUnit {
     /*
     Java tabanli wait --> Thread.sleep(), sure dolana kadar bekler
 

@@ -5,7 +5,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class C01_WriteExcel_ScreenShot_JS_Executor extends TestBase {
+public class C01_WriteExcel_ScreenShot_JS_Executor extends TestBaseJUnit {
     /*
     - 5. hucreye cell olusturup icine Nufus yazdirma;
         String dosyaYolu = "src/resources/ulkeler.xlsx";

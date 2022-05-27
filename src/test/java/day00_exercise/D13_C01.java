@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utilities.TestBase;
+import utilities.TestBaseJUnit;
 
 import java.util.List;
 
-public class D13_C01 extends TestBase {
+public class D13_C01 extends TestBaseJUnit {
 
     @Test
     public void test01() {
