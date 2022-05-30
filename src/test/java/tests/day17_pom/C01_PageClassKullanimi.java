@@ -26,7 +26,7 @@ public class C01_PageClassKullanimi {
     7- AmazonPage'de ilgili yerleri locate et.
             @FindBy(id = "twotabsearchtextbox") //  @FindBy(xpath = "//div[@class='a little']")
             public WebElement aramaKutusu;
-    8- Calisacagimiz class ya da method'un basinda page class'a ulasmak icin
+    8- Calisacagimiz her class ya da method'un basinda page class'a ulasmak icin
     AmazonPage objesi olustur.
             AmazonPage amazonPage = new AmazonPage();
     9- Bu amazonPage uzerinden istenen locate'e istenen islemi yap
@@ -59,8 +59,7 @@ public class C01_PageClassKullanimi {
             }
        15-  test sayfasindan Driver.getDriver().get(ConfigReader.getProperty("facebookUrl")); ile istenen
      adrese ulasilabillir
-
-
+       16-  Driver class'inda switch-case ile istenen browser'lari ekle.
      */
 
     @Test
