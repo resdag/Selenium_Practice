@@ -231,6 +231,48 @@ public class D00_Komutlar {
 
     - bir excel datasini Map'e atmak icin unique olan 1 degeri key'e, diger degerleri ise value'ya atariz
         --------------------------------------------------------------------------------------
+ - 5. hucreye cell olusturup icine Nufus yazdirma;
+        String dosyaYolu = "src/resources/ulkeler.xlsx";
+        FileInputStream fis = new FileInputStream(dosyaYolu);
+        Workbook workbook = WorkbookFactory.create(fis);
+            workbook.getSheet("Sayfa1")
+                    .getRow(0).createCell(4)
+                    .setCellValue("Nufus");
 
+    - bu degisiklikler workbook'ta olusur onu dosyaya yollamaliyiz:
+        FileOutputStream fos = new FileOutputStream(dosyaYolu);
+            workbook.write(fos);
+    - Dosyayi kapatalim
+        workbook.close();
+        fis.close();
+        fos.close();
+
+    * Tum sayfanin ss'ini almak icin;
+        TakesScreenshot objesi olusturmaliyiz
+            - TakesScreenshot ts = (TakesScreenshot) driver;
+        Kaydedecegimiz yeri path ile gostermeliyiz
+            - File tumSayfaResim = new File("target/ekranGoruntuleri/tumSayfa.jpeg");
+        Dosyayi gecici klasore kaydedelim
+            - File geciciDosya = ts.getScreenshotAs(OutputType.FILE);
+        Kaydedilen dosyayi istenen yere kopyalayin
+            - FileUtils.copyFile(geciciDosya, tumSayfaResim);
+
+    * Sadece tek elementin ss'ini almak icin;
+        WebElement istenenElement = driver.findElement(By.xpath("ss'i alinacak element"));
+        File istenenElementSS = new File("target/ekranGoruntuleri/istenenElementSS.jpeg");
+        File temp = istenenElement.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(temp, istenenElementSS);
+
+    *JS-Executor kullanmak icin;
+        - yeni bir JS objesi olustururuz,
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+        - islem yapilacak element locate edilir
+            WebElement istenenElement = driver.findElement(By.xpath("locate"));
+        - istenen js islemi yapilir
+             jse.executeScript("arguments[0].click();", istenenElement);
+        --------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------
      */
 }
