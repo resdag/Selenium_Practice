@@ -13,11 +13,25 @@ import java.time.Duration;
 
 public class Driver {
     /*
-    POM'de Driver icin TestBase class'ina extends etmek yerine
+  POM'de Driver icin TestBase class'ina extends etmek yerine
     Driver class'indan static method'lar kullanarak
     driver olusturup, ilgili ayarlarin yapilmasi
     ve en sonda driver'in kapatilmasi tercih edilmistir.
+
+    POM'de Driver class'indaki getDriver()'nin obje olusturularak kullanilmasini
+    engellemek icin Singleton pattern kullanimi benimsenmistir.
+
+    Singleton Pattern: tekli kullanim, bir class'in farkli class'lardan obje
+    olusturularak kullanimini engellemek icin kullanilir
+
+    Bunu saglamak icin yapmamiz gereken sey oldukca basit
+    obje olusturmak icin kullanilan constructor'i private yaptigimizda
+    baska class'lardan Driver class'indan obje olusturulmasi mumkun degildir
+
      */
+    private Driver(){
+
+    }
     static WebDriver driver;
 
     public static WebDriver getDriver() {
