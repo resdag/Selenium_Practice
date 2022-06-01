@@ -61,8 +61,17 @@ public class ConcortHotelPage {
     @FindBy(xpath = "//span[text()='List Of Hotels']")
     public WebElement listOfHotelsElement;
 
+    @FindBy(xpath = "//input[@name='Name']")
+    public WebElement searchByNameBox;
+
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "(//select[@name='datatable_ajax_length'])[1]")
+    public WebElement hotelListDropDownElement;
+
     @FindBy(xpath = "//tbody//td[3]")
-    public List<WebElement> hotelNameList;
+    public WebElement searchResultElement;
 
 
 

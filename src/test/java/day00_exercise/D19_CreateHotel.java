@@ -64,8 +64,15 @@ public class D19_CreateHotel {
         concortHotelPage.successfullyAddedOkButton.click();
         //11. Hotel list linkine tıklayın.
         concortHotelPage.hotelListMenu.click();
-        //12. hotel listesindeki ilk hotelin isminin "Anemon123" oldugunu dogrulayin..
-        Assert.assertTrue(concortHotelPage.hotelNameList.get(0).getText().equals("Anemon123"));
+        //12. Istenen hotelin eklendigini dogrulayin..
+        select = new Select(concortHotelPage.hotelListDropDownElement);
+        select.selectByVisibleText("All");
+        concortHotelPage.searchByNameBox.sendKeys(fakeHotelName);
+        concortHotelPage.searchButton.click();
+        Thread.sleep(1000);
+        String expectedHotelName = fakeHotelName;
+        String actualHotelName = concortHotelPage.searchResultElement.getText();
+        Assert.assertEquals(actualHotelName, expectedHotelName);
         Driver.closeDriver();
     }
 }
