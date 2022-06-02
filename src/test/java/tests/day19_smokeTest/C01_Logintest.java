@@ -10,7 +10,7 @@ public class C01_Logintest {
 
     BrcPage brcPage = new BrcPage();
 
-    @Test
+    @Test (groups = "grup1")
     public void positifLoginTest() {
 
         // Bir test method olustur positiveLoginTest()

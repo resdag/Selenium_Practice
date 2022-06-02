@@ -8,7 +8,7 @@ import utilities.Driver;
 
 public class C01_ConfigReader {
 
-    @Test
+    @Test(groups = "grup2")
     public void test01() {
 
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
@@ -16,7 +16,7 @@ public class C01_ConfigReader {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test (groups = "grup1")
     public void test02() {
         FacebookPage facebookPage = new FacebookPage();
         // facebook anasayfaya gidin

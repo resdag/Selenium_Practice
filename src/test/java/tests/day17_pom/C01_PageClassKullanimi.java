@@ -62,7 +62,7 @@ public class C01_PageClassKullanimi {
        16-  Driver class'inda switch-case ile istenen browser'lari ekle.
      */
 
-    @Test
+    @Test(groups = "grup1")
     public void test01() {
         Driver.getDriver().get("https://www.amazon.com");
 
@@ -72,7 +72,7 @@ public class C01_PageClassKullanimi {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(groups = {"grup1", "grup2"})
     public void test02() {
         AmazonPage amazonPage = new AmazonPage();
         // amazona gidelim
