@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--
+       * Suite altina neleri(class, package, test ...) paarelel calistirmak istedigimizi belirtmeliyiz.
+       * Bagimli testler ayri ayri yada farkli browser'da calistirilirsa hata verir.
+       * Bu islemleri suite icerisinde;
+           'parallel' attribute: calistirmanin hangi seviyede yapilacagi belirlenir.
+           'thread-count' attribute: browser sayisi secilir.
+               <suite name="tum testleri calistirma" verbose="3" parallel="classes" thread-count="3">
+-->
+<suite name="tum testleri calistirma" verbose="3" parallel="classes" thread-count="3">
+    <test name="regression">
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+    </test>
+</suite>

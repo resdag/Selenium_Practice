@@ -11,7 +11,7 @@ public class C01_Logintest {
     BrcPage brcPage = new BrcPage();
 
     @Test (groups = "grup1")
-    public void positifLoginTest() {
+    public void pozitifLoginTest() {
 
         // Bir test method olustur positiveLoginTest()
         // https://www.bluerentalcars.com/ adresine git

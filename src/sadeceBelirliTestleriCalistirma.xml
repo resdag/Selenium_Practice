@@ -33,6 +33,14 @@ sonraki hiyerarsileri uygun adimdan baslatmamiz gerekir.
     * sonra xml dosyasinda;
         - hangi gruplar calisip calismayacak(include/exclude)
         - bu gruplar hangi package altinda aranacak(package adresi)
+
+ 8- Parelel calistirma;
+        * Suite altina neleri(class, package, test ...) paarelel calistirmak istedigimizi belirtmeliyiz.
+        * Bagimli testler ayri ayri yada farkli browser'da calistirilirsa hata verir.
+        * Bu islemleri suite icerisinde;
+            'parallel' attribute: calistirmanin hangi seviyede yapilacagi belirlenir.
+            'thread-count' attribute: browser sayisi secilir.
+                <suite name="tum testleri calistirma" verbose="3" parallel="classes" thread-count="3">
 -->
 
 
