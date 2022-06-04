@@ -1,4 +1,4 @@
-package tests.day22crossBrowser_dataProvider;
+package tests.day22_crossBrowser_dataProvider;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

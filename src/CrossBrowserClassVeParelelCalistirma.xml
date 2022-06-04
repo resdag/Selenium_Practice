@@ -1,38 +1,69 @@
+<!--
+    ************* Sirayla cross browser calistirma (once farkli, sonra farkli browserda calistirma) *************
+    1- Cross browser test: Testlerin farkli browserlarda (3 chromeda, 2 firefox da) calistirilmasidir.
+    Bunun icin driver degistirilmelidir.
+    2- Testleri sirali ve ya parellel olarak yapabiliriz.
+    3- utilities > DriverCross olustur. Disaridan paremetre alabilmek icin;
+            public static WebDriver getDriver(String browser) {
+                browser = (browser == null) ? ConfigReader.getProperty("browser") : browser;
+                // browser yoksa ConfigReader'den oku
+                if (driver == null) {
+                     switch (browser) { ... }
+    4- utilities > TestBaseCross olustur. @Parameters ve @Optional notasyonlarini ekle. Gerekli ayarlari yap.
+    Artik testler TestBaseCross ile calisacak.
+            @Parameters("browser")
+            @BeforeMethod
+            public void setUp(@Optional String browser) {
+                driver = CrossDriver.getDriver(browser);
+
+            @AfterMethod
+            public void tearDown() {CrossDriver.closeDriver()}
+
+    5- Istenen testleri TestBaseCross'a child yap(extends).
+    6- CrossBrowser calistirmak icin yeni bir xml olustur.
+        * Ilk satiri kopyala
+        * <suite> - <test> - <parameter name="browser" value="chrome"> - <classes> - <class> hiyerarsisini kur.
+        * Testleri paremeter'a value olarak yazilan browserda  calistirir.
+    *** xml calistirilinca browser='firefox' ile @Test'e gider.
+        @Test test method oldugu icin @BeforeMethos arar, kendinde olmadigi icin parent'e gider ve @BeforeMethod calismaya baslar.
+        Driver degeri CrossDriver'dan atandigi icin CrossDriver'a gider. CrossDriver'da browser='firefox' olarak driver acilir.
+    ************* Pareler cross browser calistirma (ayni anda farkli browserda calistirilir)*************
+    - Cross browser ayarlarina ilave olarak suite seiyesinde parellel ve thread-count attribute'lari eklenir
+        <suite name="cross browser class calistirma" parallel="tests" thread-count="2">
+            <test> - <parameter name="browser" value="chrome"></parameter> - <classes> - <class>
+-->
+<!--
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="cross browser class calistirma">
     <test name="Cross browser chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="tests.day22crossBrowser_dataProvider.C01_AssertionsCross"></class>
-            <class name="tests.day22crossBrowser_dataProvider.C02_SoftAssertCross"></class>
+            <class name="tests.day22_crossBrowser_dataProvider.C01_AssertionsCross"></class>
+            <class name="tests.day22_crossBrowser_dataProvider.C02_SoftAssertCross"></class>
         </classes>
     </test>
     <test name="Cross browser firefox">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="tests.day22crossBrowser_dataProvider.C01_AssertionsCross"></class>
-            <class name="tests.day22crossBrowser_dataProvider.C02_SoftAssertCross"></class>
+            <class name="tests.day22_crossBrowser_dataProvider.C01_AssertionsCross"></class>
+            <class name="tests.day22_crossBrowser_dataProvider.C02_SoftAssertCross"></class>
         </classes>
     </test>
 </suite>
+ -->
 
-
-        <!--
-
-        <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-        <suite name="cross browser class calistirma" parallel="tests" thread-count="2">
-            <test name="Cross browser chrome">
-                <parameter name="browser" value="chrome"></parameter>
-                <classes>
-                    <class name="tests.day22_crossBrowser.C01_AssertionsCross"></class>
-                </classes>
-            </test>
-            <test name="Cross browser firefox">
-                <parameter name="browser" value="firefox"></parameter>
-                <classes>
-                    <class name="tests.day22_crossBrowser.C02_SoftAssertCross"></class>
-                </classes>
-            </test>
-        </suite>
-
-        -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="cross browser class calistirma" parallel="tests" thread-count="2">
+    <test name="Cross browser chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="tests.day22_crossBrowser_dataProvider.C01_AssertionsCross"></class>
+        </classes>
+    </test>
+    <test name="Cross browser firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="tests.day22_crossBrowser_dataProvider.C02_SoftAssertCross"></class>
+        </classes>
+    </test>
+</suite>

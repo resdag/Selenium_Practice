@@ -1,4 +1,4 @@
-package tests.day22crossBrowser_dataProvider;
+package tests.day22_crossBrowser_dataProvider;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -9,23 +9,21 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C03_DataProvider {
+    /*
+    -- Ayni test'i farkli giris datalariyla calistirmaktir
+    1- @Test notasyonu yanina dataProvider ifadesi ekle
+            @Test(dataProvider = "AranacakKelimeler")
+    2- Method'a paremetre yolla
+            public void dataProviderTesti(String arananKelime) {...}
+    3- AranacakKelimeler'e yaklasinca @DataProvider olusturur ve iki katli bir array olusturmamizi ister.
+            @DataProvider
+            public static Object[][] AranacakKelimeler() {
+                Object[][] arananKelimeArrayi = {{"Nutella"}, {"Java"}, {"Elma"}};
+                return arananKelimeArrayi;
+            }
+    4- Array'in her elemani icin browser'i calistirir.
 
-
-    @Test
-    public void test01() {
-        AmazonPage amazonPage = new AmazonPage();
-        //amazon anasayfaya gidelim
-        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
-        //nutella icin arama yapalim
-        amazonPage.aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
-        //sonuclarin nutella icerdigini test edelim
-        String expectedKelime = "Nutella";
-        String actualSonucYazisi = amazonPage.aramaSonucElementi.getText();
-        Assert.assertTrue(actualSonucYazisi.contains(expectedKelime));
-        //sayfayi kapatin
-        Driver.closeDriver();
-    }
-
+     */
 
     @DataProvider
     public static Object[][] AranacakKelimeler() {

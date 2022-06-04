@@ -1,10 +1,12 @@
-package tests.day22crossBrowser_dataProvider;
+package tests.day22_crossBrowser_dataProvider;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.CrossDriver;
+import utilities.Driver;
 import utilities.TestBaseCross;
 
 public class C01_AssertionsCross extends TestBaseCross {
@@ -27,5 +29,6 @@ public class C01_AssertionsCross extends TestBaseCross {
         Assert.assertTrue(sonucYaziElementi.isDisplayed());
         // 6- arama sonucunun Nutella icerdigini test edin
         Assert.assertTrue(sonucYaziElementi.getText().contains("Nutella"));
+        driver.close();
     }
 }
