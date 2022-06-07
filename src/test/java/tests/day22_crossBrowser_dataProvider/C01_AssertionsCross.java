@@ -5,8 +5,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.CrossDriver;
-import utilities.Driver;
 import utilities.TestBaseCross;
 
 public class C01_AssertionsCross extends TestBaseCross {

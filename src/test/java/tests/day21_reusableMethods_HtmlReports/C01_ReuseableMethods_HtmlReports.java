@@ -21,7 +21,7 @@ public class C01_ReuseableMethods_HtmlReports {
         ReusableMethods.switchToWindow("New Window");
 
         String expectedTitle="New Window";
-        String actualTitle=Driver.getDriver().getTitle();
+        String actualTitle= Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle,expectedTitle);
         Driver.getDriver().quit();

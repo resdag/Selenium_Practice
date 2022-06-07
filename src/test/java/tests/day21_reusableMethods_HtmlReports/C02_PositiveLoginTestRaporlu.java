@@ -52,7 +52,7 @@ public class C02_PositiveLoginTestRaporlu extends TestBaseRapor {
         // Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
 
         String actualUsername= brcPage.kullaniciProfilIsmi.getText();
-        String expectedUsername=ConfigReader.getProperty("brcValidUsername");
+        String expectedUsername= ConfigReader.getProperty("brcValidUsername");
         Assert.assertEquals(actualUsername,expectedUsername);
         extentTest.pass("kullanici basarili sekilde giris yapti");
         Driver.closeDriver();
